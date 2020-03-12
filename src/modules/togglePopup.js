@@ -1,43 +1,40 @@
-const togglePopup = () => {
+
   class Popup {
     constructor({popup, popupBtn, popupContent}) {
-      this.test = popupContent;
+      this.popupContent = popupContent;
       this.popup = document.querySelector(popup);
       this.popupBtn = document.querySelectorAll(popupBtn);
-      this.popupContent = document.querySelector(popupContent);
+      this.isOpen = false;
     }
 
     openPopup(){
-      this.popupBtn.forEach(item => {
-        item.addEventListener('click', () => {
-          this.popup.style.visibility = 'visible';
-          console.log(this.popup);
-
-        });
-      });
+      this.popup.style.visibility = 'visible';
+      this.isOpen = true;
     }
 
     closePopup(){
-      document.addEventListener('click', (e) => {
-        const target = e.target;
-        if((!target.closest(this.test) && !target.closest('.link-list')) || target.closest('.close')){
-          this.popup.style.visibility = '';
-
-        }
-      });
+      this.popup.style.visibility = '';
+      this.isOpen = false;
     }
 
     init(){
-      this.openPopup();
-      this.closePopup();
+      if(this.popupBtn){
+        this.popupBtn.forEach(item => {
+          item.addEventListener('click', () => {
+            this.openPopup();
+          });
+        });
+      }
+      document.addEventListener('click', (e) => {
+        const target = e.target;
+        if(!target.closest('.popup')) return;
+        if(target.closest('.close')){
+          this.closePopup();
+        } else if (!target.closest(this.popupContent) && this.isOpen){
+          this.closePopup();
+        }
+      });
     }
   }
 
-  const repairPopup = new Popup({
-    popup: '.popup-repair-types',
-    popupBtn: '.link-list-repair, .link-list-menu',
-    popupContent: '.popup-dialog-repair-types'
-  });
-  repairPopup.init();
-};
-export default togglePopup;
+export default Popup;
