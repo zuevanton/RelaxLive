@@ -16,9 +16,7 @@ const sendForm = () => {
   document.body.addEventListener('submit', e => {
     e.preventDefault();
     if(e.target.tagName.toLowerCase() !== 'form') return;
-    console.log(e.target);
     if(!e.target.querySelector('.checkbox__input').checked){
-      console.log(1);
       e.target.querySelector('.checkbox__label').style.borderColor = 'red';
       return
     }
