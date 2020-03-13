@@ -4,6 +4,8 @@ import slowAnchorLink from "./modules/slowAnchorLinks";
 import Popup from "./modules/togglePopup";
 import maskPhone from "./modules/maskPhone";
 import sendForm from "./modules/sendForm";
+import Tooltip from "./modules/tooltip";
+
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
@@ -46,4 +48,19 @@ window.addEventListener('DOMContentLoaded', function () {
 
   // отправка форм
   sendForm();
+
+  // подсказки
+  const tooltipFormula = new Tooltip({
+    wrap: '#formula',
+    item: '.formula-item__icon',
+    popup: '.formula-item-popup'
+  });
+  tooltipFormula.init();
+
+  const tooltipProblems = new Tooltip({
+    wrap: '#problems',
+    item: '.problems-item__icon',
+    popup: '.problems-item-popup'
+  });
+  tooltipProblems.init();
 });

@@ -942,6 +942,9 @@ template, [hidden] {
       -webkit-transform: translate3d(0, -5px, 0);
       transform: translate3d(0, -5px, 0);
       opacity: 0.1; }
+      .formula-item-popup_down:before{
+        transform: rotate(180deg);
+      }
       .formula-item-popup p {
         padding-bottom: 15px; }
       @media (max-width: 1024px) {
@@ -5243,9 +5246,7 @@ div.wave-block:nth-child(17):after {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    min-width: 1076px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s; }
+    min-width: 1076px;}
     .nav-list-repair {
       min-width: 390px;
       display: block; }
