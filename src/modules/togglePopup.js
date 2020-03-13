@@ -27,7 +27,7 @@
       }
       document.addEventListener('click', (e) => {
         const target = e.target;
-        if(!target.closest('.popup') || target.closest('.menu-link')) return;
+        if(!target.closest('.popup') || target.closest('.menu-link') || target.closest('.link-privacy')) return;
         if(target.closest('.close')){
           this.closePopup();
         } else if (!target.closest(this.popupContent) && this.isOpen){
