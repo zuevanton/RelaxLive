@@ -25,6 +25,9 @@ class Tooltip {
         let targetPopup = target.querySelector(this.popup);
         if (!targetPopup) {
           targetPopup = target.parentNode.parentNode.querySelector(this.popup);
+          if (!targetPopup) {
+            targetPopup = target.parentNode.parentNode.parentNode.querySelector(this.popup);
+          }
         }
         if (target.closest(this.item) && targetPopup) {
           let coords = target.getBoundingClientRect(),

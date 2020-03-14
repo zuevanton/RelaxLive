@@ -1129,6 +1129,16 @@ template, [hidden] {
     height: 546px;
     border-radius: 50%;
     overflow: hidden; }
+  .repair-types-slider__slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: .5s;
+  }
+  .repair-types-slider__slide_active{
+    opacity: 1;
+  }
     @media (max-width: 575px) {
       .repair-types-slider {
         width: 256px;

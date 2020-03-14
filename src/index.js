@@ -6,6 +6,8 @@ import maskPhone from "./modules/maskPhone";
 import sendForm from "./modules/sendForm";
 import Tooltip from "./modules/tooltip";
 import sliderCarousel from "./modules/sliderCarousel";
+import repairTypesSliders from "./modules/repairTypesSliders";
+import tabs from "./modules/tabs";
 
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
@@ -96,4 +98,15 @@ window.addEventListener('DOMContentLoaded', function () {
     problemsTooltipSlider.init();
   }
 
+  // слайдер + табы виды ремонта
+  tabs({
+    tabHeaderItem: '.nav-list-repair',
+    tabItem: '.repair-types-nav__item',
+    tabContentItem: '.types-repair'
+  });
+  repairTypesSliders('.types-repair1');
+  repairTypesSliders('.types-repair2');
+  repairTypesSliders('.types-repair3');
+  repairTypesSliders('.types-repair4');
+  repairTypesSliders('.types-repair5');
 });
