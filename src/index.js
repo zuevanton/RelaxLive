@@ -109,4 +109,15 @@ window.addEventListener('DOMContentLoaded', function () {
   repairTypesSliders('.types-repair3');
   repairTypesSliders('.types-repair4');
   repairTypesSliders('.types-repair5');
+  if(document.documentElement.clientWidth < 1024){
+    const navWrapSlider = new sliderCarousel({
+      main: '.nav-wrap-repair',
+      wrap: '.repair-types-nav',
+      prev: '#nav-arrow-repair-left_base',
+      next: '#nav-arrow-repair-right_base',
+      slideToShow: 4,
+      infinity: true
+    });
+    navWrapSlider.init();
+  }
 });
