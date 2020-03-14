@@ -2020,7 +2020,7 @@ div.wave-block:nth-child(17):after {
         max-width: 220px; } }
     @media (max-width: 1024px) {
       .problems-item {
-        max-width: 340px; } }
+        max-width: 100%; } }
     .problems-item__title {
       width: 260px;
       margin-top: 8px;

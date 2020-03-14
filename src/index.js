@@ -5,6 +5,7 @@ import Popup from "./modules/togglePopup";
 import maskPhone from "./modules/maskPhone";
 import sendForm from "./modules/sendForm";
 import Tooltip from "./modules/tooltip";
+import sliderCarousel from "./modules/sliderCarousel";
 
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
@@ -63,4 +64,36 @@ window.addEventListener('DOMContentLoaded', function () {
     popup: '.problems-item-popup'
   });
   tooltipProblems.init();
+
+  // подключение слайдеров подсказок на разрешении < 1024
+  if(document.documentElement.clientWidth < 1024){
+    const formulaTooltipSlider = new sliderCarousel({
+      main: '.formula-slider-wrap',
+      wrap: '.formula-slider',
+      prev: '#formula-arrow_left',
+      next: '#formula-arrow_right',
+      infinity: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          slideToShow: 1
+        }
+        ]
+    });
+    formulaTooltipSlider.init();
+
+    const problemsTooltipSlider = new sliderCarousel({
+      main: '.problems-slider-wrap',
+      wrap: '.problems-slider',
+      prev: '#problems-arrow_left',
+      next: '#problems-arrow_right',
+      infinity: true,
+      responsive: [{
+        breakpoint: 1024,
+        slideToShow: 1
+      }]
+    });
+    problemsTooltipSlider.init();
+  }
+
 });

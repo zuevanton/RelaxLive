@@ -20,25 +20,26 @@ class Tooltip {
 
   mouseover(){
     document.querySelector(this.wrap).addEventListener('mouseover', e => {
-      const target = e.target;
-      let targetPopup = target.querySelector(this.popup);
-      if(!targetPopup){
-        targetPopup = target.parentNode.parentNode.querySelector(this.popup);
-      }
-      if(target.closest(this.item) && targetPopup){
-        let coords = target.getBoundingClientRect(),
-            top = coords.top - targetPopup.offsetHeight - 5;
-        if(top < 0){
-          console.log(1);
-          targetPopup.classList.add('formula-item-popup_down');
-          targetPopup.style.bottom = `-${targetPopup.offsetHeight + 10}px`;
-        } else {
-          targetPopup.classList.remove('formula-item-popup_down');
-          targetPopup.style.bottom = '';
+      if(document.documentElement.clientWidth > 1023) {
+        const target = e.target;
+        let targetPopup = target.querySelector(this.popup);
+        if (!targetPopup) {
+          targetPopup = target.parentNode.parentNode.querySelector(this.popup);
         }
-        targetPopup.style.visibility = 'visible';
-        targetPopup.style.opacity = '1';
-        this.isShow = targetPopup;
+        if (target.closest(this.item) && targetPopup) {
+          let coords = target.getBoundingClientRect(),
+            top = coords.top - targetPopup.offsetHeight - 5;
+          if (top < 0) {
+            targetPopup.classList.add('formula-item-popup_down');
+            targetPopup.style.bottom = `-${targetPopup.offsetHeight + 10}px`;
+          } else {
+            targetPopup.classList.remove('formula-item-popup_down');
+            targetPopup.style.bottom = '';
+          }
+          targetPopup.style.visibility = 'visible';
+          targetPopup.style.opacity = '1';
+          this.isShow = targetPopup;
+        }
       }
     });
   }
