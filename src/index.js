@@ -8,6 +8,7 @@ import Tooltip from "./modules/tooltip";
 import sliderCarousel from "./modules/sliderCarousel";
 import repairTypesSliders from "./modules/repairTypesSliders";
 import tabs from "./modules/tabs";
+import tabSliders from "./modules/tabSliders";
 
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
@@ -43,6 +44,12 @@ window.addEventListener('DOMContentLoaded', function () {
   });
   consult.init();
 
+  const transparencyPopup = new Popup({
+    popup: '.popup-transparency',
+    popupBtn: '.transparency-item__img',
+    popupContent: '.popup-dialog-transparency'
+  });
+  transparencyPopup.init();
   //маска ввода
   const allPhoneInputs = document.querySelectorAll('input[name="phone"]');
   allPhoneInputs.forEach(item => {
@@ -75,12 +82,7 @@ window.addEventListener('DOMContentLoaded', function () {
       prev: '#formula-arrow_left',
       next: '#formula-arrow_right',
       infinity: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          slideToShow: 1
-        }
-        ]
+      slideToShow: 1
     });
     formulaTooltipSlider.init();
 
@@ -90,10 +92,7 @@ window.addEventListener('DOMContentLoaded', function () {
       prev: '#problems-arrow_left',
       next: '#problems-arrow_right',
       infinity: true,
-      responsive: [{
-        breakpoint: 1024,
-        slideToShow: 1
-      }]
+      slideToShow: 1
     });
     problemsTooltipSlider.init();
   }
@@ -110,14 +109,49 @@ window.addEventListener('DOMContentLoaded', function () {
   repairTypesSliders('.types-repair4');
   repairTypesSliders('.types-repair5');
   if(document.documentElement.clientWidth < 1024){
-    const navWrapSlider = new sliderCarousel({
-      main: '.nav-wrap-repair',
-      wrap: '.repair-types-nav',
+    const repairNavSlider = new tabSliders({
+      main: '.repair-types-nav',
+      wrap: '.nav-list-repair',
       prev: '#nav-arrow-repair-left_base',
-      next: '#nav-arrow-repair-right_base',
-      slideToShow: 4,
-      infinity: true
+      next: '#nav-arrow-repair-right_base'
     });
-    navWrapSlider.init();
+    repairNavSlider.init();
   }
+  // слайдер договоров
+  const transparencySlider = new sliderCarousel({
+    main: '.popup-transparency-slider-wrap',
+    wrap: '.popup-transparency-slider',
+    prev: '#transparency_left',
+    next: '#transparency_right',
+    slideToShow: 1
+  });
+  transparencySlider.init();
+  // пока не работает
+  // слайдер отзывов
+  const reviewsSlider = new sliderCarousel({
+    main: '.reviews-slider-wrap',
+    wrap: '.reviews-slider',
+    prev: '#reviews-arrow_left',
+    next: '#reviews-arrow_right',
+    slideToShow: 1
+  });
+  reviewsSlider.init();
+
+  const partnersSlider = new sliderCarousel({
+    main: '.partners-slider_wrap',
+    wrap: '.partners-slider',
+    prev: '#partners-arrow_left',
+    next: '#partners-arrow_right',
+    infinity: true,
+    slideToShow: 3,
+    responsive: [{
+      breakpoint: 1024,
+      slideToShow: 2
+    },
+     {
+      breakpoint: 576,
+      slideToShow: 1
+    }]
+  });
+  partnersSlider.init();
 });

@@ -864,6 +864,11 @@ template, [hidden] {
     text-align: center;
     color: #000000;
     z-index: 0; }
+    @media (max-width: 1023px){
+      .formula-item {
+        justify-content: flex-start;
+      }
+    }
     .formula-item strong {
       font-weight: 500; }
     .formula-item__descr {
@@ -3463,7 +3468,7 @@ div.wave-block:nth-child(17):after {
       margin-right: auto; }
       @media (max-width: 1024px) {
         .partners-slider__slide {
-          max-width: 114px;
+          /*max-width: 114px;*/
           min-height: auto; }
           .partners-slider__slide svg {
             max-width: 114px;
@@ -3472,7 +3477,7 @@ div.wave-block:nth-child(17):after {
             margin-right: auto; } }
       @media (max-width: 575px) {
         .partners-slider__slide {
-          max-width: 134px;
+          /*max-width: 134px;*/
           min-height: auto; }
           .partners-slider__slide svg {
             max-width: 134px;
@@ -5256,6 +5261,7 @@ div.wave-block:nth-child(17):after {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    transition: .4s;
     min-width: 1076px;}
     .nav-list-repair {
       min-width: 390px;
@@ -5275,6 +5281,7 @@ div.wave-block:nth-child(17):after {
     .nav-list-popup-repair {
       text-align: center;
       min-width: 320px;
+      transition: 0s;
       display: block; }
       @media (max-width: 1024px) {
         .nav-list-popup-repair {
