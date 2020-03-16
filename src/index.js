@@ -9,6 +9,7 @@ import sliderCarousel from "./modules/sliderCarousel";
 import repairTypesSliders from "./modules/repairTypesSliders";
 import tabs from "./modules/tabs";
 import tabSliders from "./modules/tabSliders";
+import scheme from "./modules/scheme";
 
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
@@ -44,12 +45,6 @@ window.addEventListener('DOMContentLoaded', function () {
   });
   consult.init();
 
-  const transparencyPopup = new Popup({
-    popup: '.popup-transparency',
-    popupBtn: '.transparency-item__img',
-    popupContent: '.popup-dialog-transparency'
-  });
-  transparencyPopup.init();
   //маска ввода
   const allPhoneInputs = document.querySelectorAll('input[name="phone"]');
   allPhoneInputs.forEach(item => {
@@ -118,15 +113,7 @@ window.addEventListener('DOMContentLoaded', function () {
     repairNavSlider.init();
   }
   // слайдер договоров
-  const transparencySlider = new sliderCarousel({
-    main: '.popup-transparency-slider-wrap',
-    wrap: '.popup-transparency-slider',
-    prev: '#transparency_left',
-    next: '#transparency_right',
-    slideToShow: 1
-  });
-  transparencySlider.init();
-  // пока не работает
+  scheme();
   // слайдер отзывов
   const reviewsSlider = new sliderCarousel({
     main: '.reviews-slider-wrap',

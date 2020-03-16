@@ -1682,7 +1682,9 @@ div.wave-block:nth-child(17):after {
     align-items: flex-start; }
     @media (max-width: 1090px) {
       .transparency-slider.row {
-        display: block; } }
+        display: block;
+        flex-wrap: nowrap;
+        justify-content: normal;} }
     .transparency-slider-wrap {
       margin-top: 150px; }
       @media (max-width: 1024px) {
@@ -4739,8 +4741,7 @@ div.wave-block:nth-child(17):after {
     position: relative;
     width: 432px;
     height: 565px;
-    border-radius: 10px;
-    overflow: hidden; }
+    border-radius: 10px;}
     @media (max-width: 575px) {
       .popup-transparency-slider {
         border-radius: 0; } }

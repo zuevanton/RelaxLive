@@ -57,7 +57,7 @@ class sliderCarousel {
       }
       .glo-slider__wrap_${this.class} {
         display: flex !important;
-        transition: transform 0.5s !important;
+        transition: transform 0.5s;
         will-change: transform !important;
       }
       .glo-slider__item_${this.class} {
@@ -75,6 +75,7 @@ class sliderCarousel {
   prevSlider(){
     if(this.options.infinity || this.options.position > 0) {
       --this.options.position;
+      console.log(this.options.position);
       if(this.options.position < 0){
         this.options.position = this.slides.length - this.slidesToShow;
       }
@@ -83,10 +84,20 @@ class sliderCarousel {
       `;
     }
   }
-
+  showSlide(position){
+    this.options.position = position;
+    this.wrap.style.transition = '0s';
+    this.wrap.style.transform = `
+      translateX(-${this.options.position * this.options.widthSlide}%)
+      `;
+    setTimeout(()=>{
+      this.wrap.style.transition = '';
+    }, 500);
+  }
   nextSlider(){
     if(this.options.infinity || this.options.position < this.slides.length - this.slidesToShow) {
       ++this.options.position;
+      console.log(this.options.position);
       if(this.options.position > this.slides.length - this.slidesToShow){
         this.options.position = 0;
       }
