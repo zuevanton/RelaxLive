@@ -10,6 +10,8 @@ import repairTypesSliders from "./modules/repairTypesSliders";
 import tabs from "./modules/tabs";
 import tabSliders from "./modules/tabSliders";
 import scheme from "./modules/scheme";
+import portfolio from "./modules/portfolio";
+import accordion from "./modules/accordion";
 
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
@@ -22,6 +24,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
   //плавный скролл
   slowAnchorLink();
+
+  //аккордеон
+  accordion();
 
   // попапы
   const repairPopup = new Popup({
@@ -159,4 +164,7 @@ window.addEventListener('DOMContentLoaded', function () {
     });
     schemeNavSlider.init();
   }
+
+  //portfolio
+  portfolio();
 });
