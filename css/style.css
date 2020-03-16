@@ -3025,8 +3025,7 @@ div.wave-block:nth-child(17):after {
       background: url("../images/director/title_mobile.svg") no-repeat;
       z-index: -1; } }
   .reviews-slider {
-    height: 314px;
-    overflow: hidden; }
+    height: 314px;}
     .reviews-slider-wrap {
       position: relative;
       max-width: 494px;
@@ -5966,19 +5965,19 @@ div.wave-block:nth-child(17):after {
     right: -50px; } }
 
 #reviews-arrow_left {
-  top: 75%;
-  left: -80px; }
+  top: 50%;
+  left: 20px; }
   @media (max-width: 575px) {
     #reviews-arrow_left {
-      top: 117%;
+      top: 50%;
       left: 55px; } }
 
 #reviews-arrow_right {
-  top: 75%;
-  right: -80px; }
+  top: 50%;
+  right: 20px; }
   @media (max-width: 575px) {
     #reviews-arrow_right {
-      top: 117%;
+      top: 50%;
       right: 55px; } }
 
 #transparency-arrow_left {

@@ -133,7 +133,8 @@ window.addEventListener('DOMContentLoaded', function () {
     wrap: '.reviews-slider',
     prev: '#reviews-arrow_left',
     next: '#reviews-arrow_right',
-    slideToShow: 1
+    slideToShow: 1,
+    infinity: true
   });
   reviewsSlider.init();
 
