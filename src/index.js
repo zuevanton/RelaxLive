@@ -155,4 +155,21 @@ window.addEventListener('DOMContentLoaded', function () {
     }]
   });
   partnersSlider.init();
+
+  // scheme
+  tabs({
+    tabHeaderItem: '#scheme-list',
+    tabItem: '.scheme-nav__item',
+    tabContentItem: '.scheme-slider__slide',
+    tabContentSecondItem: '.scheme-description-block'
+  });
+  if(document.documentElement.clientWidth < 1024){
+    const schemeNavSlider = new tabSliders({
+      main: '.scheme-types-nav',
+      wrap: '#scheme-list',
+      prev: '#nav-arrow-scheme_left',
+      next: '#nav-arrow-scheme_right'
+    });
+    schemeNavSlider.init();
+  }
 });
