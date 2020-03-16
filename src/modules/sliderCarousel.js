@@ -6,6 +6,7 @@ class sliderCarousel {
                 next,
                 slideToShow,
                 infinity = false,
+                countered = false,
                 position = 0,
                 responsive = [] }) {
     this.main = document.querySelector(main);
@@ -16,6 +17,9 @@ class sliderCarousel {
     this.prev = document.querySelector(prev);
     this.slidesToShow = slideToShow;
     this.responsive = responsive;
+    this.countered = countered;
+    this.counter = this.main.querySelector('.slider-counter');
+    this.slideNum = 1;
     this.options = {
       position,
       infinity,
@@ -66,7 +70,7 @@ class sliderCarousel {
     `;
     document.head.appendChild(style);
   }
-
+  
   controlSlider() {
     this.prev.addEventListener('click', this.prevSlider.bind(this));
     this.next.addEventListener('click', this.nextSlider.bind(this));
@@ -75,7 +79,10 @@ class sliderCarousel {
   prevSlider(){
     if(this.options.infinity || this.options.position > 0) {
       --this.options.position;
-      console.log(this.options.position);
+      if(this.countered){
+        this.slideNum--;
+        this.setCounter();
+      }
       if(this.options.position < 0){
         this.options.position = this.slides.length - this.slidesToShow;
       }
@@ -84,6 +91,23 @@ class sliderCarousel {
       `;
     }
   }
+  
+  setCounter(){
+    const curSlideNumberVal = this.counter.querySelector('.slider-counter-content__current'),
+          totalSlidesVal = this.counter.querySelector('.slider-counter-content__total');
+    if(this.options.infinity){
+      if(this.slideNum <= 0){
+        this.slideNum = this.wrap.children.length;
+      }
+      if(this.slideNum > this.wrap.children.length){
+        this.slideNum = 1;
+      }
+    }
+    curSlideNumberVal.textContent = this.slideNum;
+    totalSlidesVal.textContent = this.wrap.children.length;
+
+  }
+  
   showSlide(position){
     this.options.position = position;
     this.wrap.style.transition = '0s';
@@ -97,7 +121,10 @@ class sliderCarousel {
   nextSlider(){
     if(this.options.infinity || this.options.position < this.slides.length - this.slidesToShow) {
       ++this.options.position;
-      console.log(this.options.position);
+      if(this.countered){
+        this.slideNum++;
+        this.setCounter();
+      }
       if(this.options.position > this.slides.length - this.slidesToShow){
         this.options.position = 0;
       }

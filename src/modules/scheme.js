@@ -8,15 +8,19 @@ const scheme = () => {
     popupContent: '.popup-dialog-transparency'
   });
   transparencyPopup.init();
+
   const transparencySlider = new sliderCarousel({
     main: '.popup-transparency-slider-wrap',
     wrap: '.popup-transparency-slider',
     prev: '#transparency_left',
     next: '#transparency_right',
     slideToShow: 1,
+    countered: true,
     infinity: true
   });
   transparencySlider.init();
+  transparencySlider.setCounter();
+
   if(document.documentElement.clientWidth < 1091) {
     const mobileTransparencySlider = new sliderCarousel({
       main: '.transparency-slider-wrap',
@@ -32,6 +36,7 @@ const scheme = () => {
   schemeImgs.forEach((item, i) => {
     item.addEventListener('click', e =>{
       transparencySlider.showSlide(i);
+      transparencySlider.setCounter(i+1);
     });
   });
 };
