@@ -5823,7 +5823,8 @@ div.wave-block:nth-child(17):after {
 
 .active-item {
   font-size: 20px;
-  opacity: 1; }
+  opacity: 1;
+  z-index: 1;}
   .active-item .formula-item__icon {
     width: 80px;
     height: 80px;
