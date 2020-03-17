@@ -12,6 +12,7 @@ import tabSliders from "./modules/tabSliders";
 import scheme from "./modules/scheme";
 import portfolio from "./modules/portfolio";
 import accordion from "./modules/accordion";
+import repairTypesInfo from "./modules/repairTypesInfo";
 
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
@@ -27,6 +28,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
   //аккордеон
   accordion();
+
+  // выводим данные из БД
+  repairTypesInfo();
 
   // попапы
   const repairPopup = new Popup({
@@ -63,14 +67,16 @@ window.addEventListener('DOMContentLoaded', function () {
   const tooltipFormula = new Tooltip({
     wrap: '#formula',
     item: '.formula-item__icon',
-    popup: '.formula-item-popup'
+    popup: '.formula-item-popup',
+    icon: '.formula-item'
   });
   tooltipFormula.init();
 
   const tooltipProblems = new Tooltip({
     wrap: '#problems',
     item: '.problems-item__icon',
-    popup: '.problems-item-popup'
+    popup: '.problems-item-popup',
+    icon: '.problems-item'
   });
   tooltipProblems.init();
 

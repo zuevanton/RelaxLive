@@ -31,6 +31,15 @@ const scheme = () => {
       infinity: true
     });
     mobileTransparencySlider.init();
+    const mobileTransparencySlider2 = new sliderCarousel({
+      main: '.transparency-slider-wrap',
+      wrap: '.transparency-slider',
+      prev: '#transparency_left',
+      next: '#transparency_right',
+      slideToShow: 1,
+      infinity: true
+    });
+    mobileTransparencySlider2.init();
   }
   const schemeImgs = document.querySelectorAll('.transparency-item__img');
   schemeImgs.forEach((item, i) => {

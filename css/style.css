@@ -699,6 +699,9 @@ template, [hidden] {
   margin-top: 100px;
   background: url(../images/decor/big_round_decor.svg) 100% 100% no-repeat;
   background-position: center -65px; }
+  .formula .section-title{
+    z-index: -1;
+  }
   @media (max-width: 1024px) {
     .formula {
       padding: 0 0 35px;

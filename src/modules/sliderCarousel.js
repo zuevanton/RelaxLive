@@ -92,7 +92,7 @@ class sliderCarousel {
     }
   }
   
-  setCounter(){
+  setCounter(i){
     const curSlideNumberVal = this.counter.querySelector('.slider-counter-content__current'),
           totalSlidesVal = this.counter.querySelector('.slider-counter-content__total');
     if(this.options.infinity){
@@ -102,6 +102,9 @@ class sliderCarousel {
       if(this.slideNum > this.wrap.children.length){
         this.slideNum = 1;
       }
+    }
+    if(i){
+      this.slideNum = i;
     }
     curSlideNumberVal.textContent = this.slideNum;
     totalSlidesVal.textContent = this.wrap.children.length;
