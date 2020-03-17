@@ -20,6 +20,7 @@ const tabs = ({tabHeaderItem, tabItem, tabContentItem, tabContentSecondItem = ''
   });
   const toggleTabContent = (index) => {
     for(let i = 0; i < tabContent.length; i++){
+
       if(index === i){
         tab[i].classList.add('active');
         tabContent[i].style.display = '';
