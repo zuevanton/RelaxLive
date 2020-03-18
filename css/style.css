@@ -5674,6 +5674,9 @@ div.wave-block:nth-child(17):after {
     text-transform: uppercase;
     background: transparent;
     color: #322823;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer; }
     @media (max-width: 1024px) {
       .button-footer {
