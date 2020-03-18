@@ -19,12 +19,69 @@ const designs = () => {
   });
   tabsSlider.init();
 
-  // tabs({
-  //   tabHeaderItem: '#nav-designs-popup',
-  //   tabItem: 'designs-nav__item',
-  //
-  // });
-
+  tabs({
+    tabHeaderItem: '#nav-designs-popup',
+    tabItem: '.designs-nav__item',
+    tabContentItem: '.popup-designs-slider__style',
+    tabContentSecondItem: '.popup-design-text'
+  });
+  const tabsPopupSlider = new tabSliders({
+    main: '#nav-designs-popup',
+    wrap: '#nav-list-popup-designs',
+    prev: '#nav-arrow-popup-designs_left',
+    next: '#nav-arrow-popup-designs_right'
+  });
+  tabsPopupSlider.init();
+  slider({
+    sliderItem: '.popup-designs-slider__style1',
+    wrap: '.popup-design-slider-wrap',
+    slideItem: '.popup-design-slider__style-slide',
+    prev: '#popup_design_left',
+    next: '#popup_design_right',
+    counter: 'popup-designs-counter',
+    navList: '#nav-list-popup-designs',
+    navItem: '.designs-nav__item_popup'
+  });
+  slider({
+    sliderItem: '.popup-designs-slider__style2',
+    wrap: '.popup-design-slider-wrap',
+    slideItem: '.popup-design-slider__style-slide',
+    prev: '#popup_design_left',
+    next: '#popup_design_right',
+    counter: 'popup-designs-counter',
+    navList: '#nav-list-popup-designs',
+    navItem: '.designs-nav__item_popup'
+  });
+  slider({
+    sliderItem: '.popup-designs-slider__style3',
+    wrap: '.popup-design-slider-wrap',
+    slideItem: '.popup-design-slider__style-slide',
+    prev: '#popup_design_left',
+    next: '#popup_design_right',
+    counter: 'popup-designs-counter',
+    navList: '#nav-list-popup-designs',
+    navItem: '.designs-nav__item_popup'
+  });
+  slider({
+    sliderItem: '.popup-designs-slider__style4',
+    wrap: '.popup-design-slider-wrap',
+    slideItem: '.popup-design-slider__style-slide',
+    prev: '#popup_design_left',
+    next: '#popup_design_right',
+    counter: 'popup-designs-counter',
+    navList: '#nav-list-popup-designs',
+    navItem: '.designs-nav__item_popup'
+  });
+  slider({
+    sliderItem: '.popup-designs-slider__style5',
+    wrap: '.popup-design-slider-wrap',
+    slideItem: '.popup-design-slider__style-slide',
+    prev: '#popup_design_left',
+    next: '#popup_design_right',
+    counter: 'popup-designs-counter',
+    navList: '#nav-list-popup-designs',
+    navItem: '.designs-nav__item_popup'
+  });
 
   const designPopup = new Popup({
     popup: '.popup-design',

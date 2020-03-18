@@ -2529,9 +2529,7 @@ div.wave-block:nth-child(17):after {
           height: 100%;
           -o-object-fit: contain;
           object-fit: contain; }
-.slider-slide_active{
-  opacity: 1;
-}
+
 .preview-block {
   position: absolute;
   bottom: -10px;
@@ -4779,6 +4777,7 @@ div.wave-block:nth-child(17):after {
     position: relative;
     margin-top: 0;
     border-radius: 0 20px 0 0;
+    height: 100%;
     overflow: hidden; }
     @media (max-width: 1024px) {
       .popup-design-slider {
@@ -4803,6 +4802,22 @@ div.wave-block:nth-child(17):after {
         .popup-design-slider-wrap {
           width: 320px;
           height: 50vh; } }
+  .popup-designs-slider__style{
+    min-height: 100%;
+  }
+  .popup-design-slider__style-slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    max-width: 100%;
+    transition: .5s;
+    min-height: 100%;
+  }
+  .slider-slide_active{
+    opacity: 1 !important;
+  }
   .popup-design-text {
     position: relative;
     display: none;
