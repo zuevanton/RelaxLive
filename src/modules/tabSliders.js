@@ -19,7 +19,6 @@ export default class tabSliders {
   prevSlide(){
     if(this.position <= 0) return;
     this.position -= this.step;
-    console.log(1);
     this.wrap.style.transform = `translateX(-${this.position}px)`;
   }
 

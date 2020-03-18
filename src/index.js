@@ -13,6 +13,7 @@ import scheme from "./modules/scheme";
 import portfolio from "./modules/portfolio";
 import accordion from "./modules/accordion";
 import repairTypesInfo from "./modules/repairTypesInfo";
+import designs from "./modules/designs";
 
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
@@ -109,11 +110,8 @@ window.addEventListener('DOMContentLoaded', function () {
     tabItem: '.repair-types-nav__item',
     tabContentItem: '.types-repair'
   });
-  repairTypesSliders('.types-repair1');
-  repairTypesSliders('.types-repair2');
-  repairTypesSliders('.types-repair3');
-  repairTypesSliders('.types-repair4');
-  repairTypesSliders('.types-repair5');
+  repairTypesSliders();
+
   if(document.documentElement.clientWidth < 1024){
     const repairNavSlider = new tabSliders({
       main: '.repair-types-nav',
@@ -173,4 +171,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
   //portfolio
   portfolio();
+  //design
+  designs();
 });

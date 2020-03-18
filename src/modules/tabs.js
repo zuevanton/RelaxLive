@@ -1,10 +1,14 @@
-const tabs = ({tabHeaderItem, tabItem, tabContentItem, tabContentSecondItem = ''}) =>{
+const tabs = ({tabHeaderItem, tabItem, tabContentItem, tabContentSecondItem = '', tabContentThirdItem = ''}) =>{
   const tabHeader = document.querySelector(tabHeaderItem),
     tab = tabHeader.querySelectorAll(tabItem),
     tabContent = document.querySelectorAll(tabContentItem);
-  let tabSecondContent;
+  let tabSecondContent,
+      tabThirdContent;
   if(tabContentSecondItem){
-    tabSecondContent = document.querySelectorAll(tabContentSecondItem)
+    tabSecondContent = document.querySelectorAll(tabContentSecondItem);
+  }
+  if(tabContentThirdItem){
+    tabThirdContent = document.querySelectorAll(tabContentThirdItem);
   }
 
 
@@ -27,11 +31,17 @@ const tabs = ({tabHeaderItem, tabItem, tabContentItem, tabContentSecondItem = ''
         if(tabSecondContent) {
           tabSecondContent[i].classList.add('visible-content-block');
         }
+        if(tabThirdContent){
+          tabThirdContent[i].classList.add('visible');
+        }
       } else {
         tabContent[i].style.display = 'none';
         tab[i].classList.remove('active');
         if(tabSecondContent){
           tabSecondContent[i].classList.remove('visible-content-block');
+        }
+        if(tabThirdContent){
+          tabThirdContent[i].classList.remove('visible');
         }
       }
     }

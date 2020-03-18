@@ -60,7 +60,7 @@ class sliderCarousel {
         overflow: hidden !important;
       }
       .glo-slider__wrap_${this.class} {
-        display: flex !important;
+        display: flex;
         transition: transform 0.5s;
         will-change: transform !important;
       }

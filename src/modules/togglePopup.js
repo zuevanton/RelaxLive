@@ -9,11 +9,13 @@
 
     openPopup(){
       this.popup.style.visibility = 'visible';
+      this.popup.style.opacity = '1';
       this.isOpen = true;
     }
 
     closePopup(){
       this.popup.style.visibility = '';
+      this.popup.style.opacity = '';
       this.isOpen = false;
     }
 
