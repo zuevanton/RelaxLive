@@ -151,7 +151,6 @@ const designs = () => {
           .filter((item, i) => item.classList.contains('visible'))[0];
         const slides = Array.from(document.querySelectorAll('.designs-slider__style'))
           .filter(item => item.style.display !== 'none')[0].children;
-        console.log(slides);
         Array.from(previewBlockCur.children).forEach((item, i) => {
           if(item === target.closest('.preview-block__item')){
             item.querySelector('.preview-block__item-inner').classList.add('preview_active');

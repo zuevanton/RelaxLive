@@ -18,7 +18,7 @@ const slider = ({sliderItem, wrap, slideItem, prev, next, counter, navList, navI
   };
 
   const setCounter = () => {
-    slide.forEach((item) => {
+    slide.forEach(() => {
       if(slider.style.display !== 'none'){
         currentSlideValue.textContent = currentSlide + 1;
         totalSlideValue.textContent = slide.length;

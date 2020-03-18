@@ -19,9 +19,12 @@ import elementClosest from 'element-closest';
 elementClosest(window);
 import '@babel/polyfill';
 import 'nodelist-foreach-polyfill';
+import 'formdata-polyfill';
 import 'fetch-polyfill';
 import 'es6-promise';
-import 'formdata-polyfill';
+import smoothscroll from 'smoothscroll-polyfill';
+smoothscroll.polyfill();
+
 
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
