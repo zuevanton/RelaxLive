@@ -18,7 +18,7 @@ const slider = ({sliderItem, wrap, slideItem, prev, next, counter, navList, navI
   };
 
   const setCounter = () => {
-    slide.forEach(() => {
+    slide.forEach((item) => {
       if(slider.style.display !== 'none'){
         currentSlideValue.textContent = currentSlide + 1;
         totalSlideValue.textContent = slide.length;
@@ -46,11 +46,7 @@ const slider = ({sliderItem, wrap, slideItem, prev, next, counter, navList, navI
       setCounter();
     }
   });
-  document.querySelector(navList).addEventListener('click', e => {
-    const target = e.target;
-    if(!target.closest(navItem)) return;
-    setCounter();
-  });
+  document.querySelector(navList).addEventListener('click', setCounter);
   setCounter();
 };
 

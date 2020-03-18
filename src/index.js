@@ -15,6 +15,14 @@ import accordion from "./modules/accordion";
 import repairTypesInfo from "./modules/repairTypesInfo";
 import designs from "./modules/designs";
 
+import elementClosest from 'element-closest';
+elementClosest(window);
+import '@babel/polyfill';
+import 'nodelist-foreach-polyfill';
+import 'fetch-polyfill';
+import 'es6-promise';
+import 'formdata-polyfill';
+
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
